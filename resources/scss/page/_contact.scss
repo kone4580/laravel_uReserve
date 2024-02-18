@@ -1,0 +1,61 @@
+@use "../global" as *;
+
+.contact_table {
+	width: 100%;
+	tr {
+		th {
+			border-top: 1px solid #d3d3d3;
+			padding: 18px 40px 18px 0;
+			width: 32%;
+			vertical-align: middle;
+			text-align: left;
+			@include less_pc {
+				display: block;
+				padding: 16px 0;
+				width: 100%;
+				text-align: left;
+			}
+			.hissu_cell {
+				position: relative;
+				.hissu {
+					background: #e64949;
+					font-size: 12px;
+					font-weight: 700;
+					color: #fff;
+					display: inline-block;
+					padding: 4px 11px;
+					position: absolute;
+					right: 0;
+					top: 50%;
+					margin-top: -13px;
+					@include less_pc {
+						padding: 0 7px 1px;
+						margin-top: -10px;
+					}
+				}
+			}
+		}
+		td {
+			padding: 18px 0;
+			border-top: 1px solid #d3d3d3;
+			width: 68%;
+			@include less_pc {
+				display: block;
+				width: 100%;
+				box-sizing: border-box;
+				padding: 0 0 20px;
+				border-top: 0;
+			}
+		}
+		&:last-child {
+			th {
+				@include over_tab {
+					border-bottom: 1px solid #d3d3d3;
+				}
+			}
+			td {
+				border-bottom: 1px solid #d3d3d3;
+			}
+		}
+	}
+}

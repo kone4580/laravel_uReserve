@@ -1,0 +1,144 @@
+@use "../global" as *;
+
+/**************
+Sidebar
+**************/
+.sidebar-sticky {
+	@include over_tab {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 100px;
+	}
+}
+.side_title {
+	background-color: $gray;
+	color: white;
+	padding: 10px;
+	font-weight: bold;
+}
+.side_line_title {
+	border-top: 1px #333 solid;
+	border-bottom: 1px #333 solid;
+	font-weight: bold;
+	text-align: center;
+	padding: 8px;
+	margin-bottom: 16px;
+}
+.side_links {
+	background-color: #fafafa;
+	padding: 10px 0;
+	@include less_tab {
+		width: 100%;
+		@include flex;
+		flex-wrap: wrap;
+		background-color: transparent;
+	}
+	li {
+		@include over_tab {
+			width: 100%;
+		}
+		@include less_tab {
+			display: block;
+			width: 49.4%;
+			margin-bottom: 4px;
+		}
+		a {
+			padding: 8px 0 8px 24px;
+			display: block;
+			position: relative;
+			color: #999;
+			font-size: 1.4rem;
+			line-height: 1.5;
+			background-color: #fafafa;
+			@include over_tab {
+				transition: all 0.3s $easeInOutSine;
+				&:hover {
+					background-color: #f3f3f3;
+				}
+			}
+			@include less_tab {
+				border: 1px $red solid;
+				font-size: 1.2rem;
+				width: 100%;
+				height: 40px;
+				@include flex(center, center);
+				padding: 0;
+				color: $red;
+			}
+			&::before {
+				@include over_tab {
+					content: "";
+					display: block;
+					width: 6px;
+					height: 6px;
+					border-radius: 4px;
+					background-color: #ccc;
+					position: absolute;
+					left: 12px;
+					top: 50%;
+					margin-top: -3px;
+				}
+			}
+		}
+		&.active {
+			a {
+				@include over_tab {
+					background-color: $bgBlue;
+					color: #333;
+					&::before {
+						background-color: $blue;
+					}
+				}
+			}
+		}
+	}
+}
+.side_bnrs {
+	li {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+}
+.side_bg_white {
+	background-color: white;
+	padding: 12px;
+	@include sp {
+		padding: 16px;
+	}
+}
+.side_posts {
+	.side_posts_item {
+		margin-top: 12px;
+		.thumb {
+			display: block;
+			width: 100%;
+			overflow: hidden;
+			aspect-ratio: 4 / 3;
+			border-radius: 4px;
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+		.tit {
+			margin-top: 5px;
+			font-size: 1.3rem;
+		}
+		&.flex {
+			@include flex;
+			.thumb {
+				width: 96px;
+			}
+			.tit {
+				width: calc(100% - 110px);
+			}
+		}
+		&.special {
+			.thumb {
+				aspect-ratio: inherit;
+			}
+		}
+	}
+}

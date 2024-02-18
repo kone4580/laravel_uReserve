@@ -1,0 +1,72 @@
+@use "../global" as *;
+
+
+.breadcrumbs {
+	font-size: 1.2rem;
+	box-sizing: border-box;
+	padding: 16px 0;
+	background-color: #fff;
+	border-bottom: 1px solid #2b2f38;
+	@include sp {
+		padding: 10px 0;
+		width: 100%;
+	}
+	.wrap {
+		@include sp {
+			width: 100%;
+			overflow-x: scroll;
+			scrollbar-width: none;
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+	}
+}
+.bread_inner {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	@include sp {
+		width: auto;
+		padding-left: 16px;
+	}
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: normal;
+		color: #666;
+		position: relative;
+		margin-right: 10px;
+		vertical-align: middle;
+		flex-shrink: 0;
+		@include sp {
+			padding-right: 10px;
+			margin-right: 0;
+		}
+		&::after {
+			content: "";
+			display: block;
+			width: 5px;
+			height: 5px;
+			border-top: 2px solid #2b2f38;
+			border-right: 2px solid #2b2f38;
+			transform: rotate(45deg);
+			margin-left: 10px;
+			@include sp {
+				margin-left: 6px;
+			}
+		}
+	}
+	> span {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: normal;
+		color: #666;
+		position: relative;
+		margin-right: 10px;
+		vertical-align: middle;
+		flex-shrink: 0;
+	}
+}

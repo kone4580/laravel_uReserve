@@ -1,0 +1,493 @@
+@use "../global" as *;
+
+.top_act_list {
+	width: 100%;
+	@include over_sp {
+		@include inline-flex;
+	}
+	+ .btn-blue {
+		margin-top: 40px;
+		@include tab {
+			width: 300px;
+			margin-top: 16px;
+		}
+		@include sp {
+			margin-top: 8px;
+		}
+	}
+}
+
+.act_list_item {
+	background-color: white;
+	border-radius: 8px;
+	position: relative;
+	margin-bottom: 30px;
+	@include over_tab {
+		padding: 24px;
+		width: 49%;
+		&:nth-child(odd) {
+			margin-right: 2%;
+		}
+	}
+	@include tab {
+		padding: 20px;
+	}
+	@include sp {
+		width: 100%;
+		margin-bottom: 15px;
+		padding-bottom: 4px;
+	}
+	.act_list_item_linkarea {
+		position: relative;
+		.float_link {
+			@include over_sp {
+				display: none;
+			}
+		}
+	}
+}
+.act_list_item_head {
+	width: 100%;
+	@include over_sp {
+		@include flex(flex-start, space-between);
+	}
+	@include sp {
+		display: flex;
+	}
+	.act_list_item_img {
+		position: relative;
+		overflow: hidden;
+		@include over_sp {
+			width: 214px;
+			aspect-ratio: 4 / 3;
+			border-radius: 8px;
+		}
+		@include sp {
+			width: 120px;
+			border-radius: 0 0 8px 0;
+		}
+		a {
+			img {
+				@include centerItem;
+				transition: all .3s ease;
+			}
+			&:hover {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+	.act_list_item_head_right {
+		@include over_sp {
+			width: calc(100% - 240px);
+		}
+		@include sp {
+			padding: 16px 5% 0;
+			width: calc(100% - 120px);
+		}
+		.act_name {
+			font-size: 1.8rem;
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 4;
+			-webkit-box-orient: vertical;
+			line-height: 1.5;
+			position: relative;
+			@include sp {
+				font-size: 1.4rem;
+				-webkit-line-clamp: 3;
+			}
+			a {
+				color: $black;
+				&:hover {
+					color: $waterBlue;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	.pr_tag {
+		display: block;
+		width: 64px;
+		position: absolute;
+		top: -20px;
+		left: -20px;
+		z-index: 5;
+		transform: rotate(-7deg);
+		@include sp {
+			left: -10px;
+			top: -18px;
+		}
+	}
+}
+.act_info_list {
+	@include over_sp {
+		margin: 10px auto;
+	}
+	ul {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		@include sp {
+			flex-direction: column;
+			padding: 0 5%;
+			margin-top: 10px;
+		}
+		li {
+			font-size: 1.3rem;
+			color: $gray;
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+			i {
+				margin-right: 4px;
+				font-size: 1.5rem;
+				color: #666;
+			}
+		}
+	}
+}
+.act_list_item_intro {
+	font-size: 1.3rem;
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	@include over_sp {
+		margin: 10px auto;
+	}
+	@include sp {
+		font-size: 1.2rem;
+		padding: 0 5%;
+		margin: 3vw auto;
+		-webkit-line-clamp: 2;
+	}
+}
+.act_list_comment {
+	background-color: #f3f3f3;
+	border-radius: 5px;
+	@include over_sp {
+		margin: 10px auto;
+		padding: 12px 16px;
+	}
+	@include sp {
+		padding: 5vw;
+		margin: 4vw auto;
+		display: none;
+	}
+	.tit {
+		font-size: 1.2rem;
+		color: white;
+		width: 110px;
+		height: 24px;
+		background-color: $navy;
+		margin-bottom: 5px;
+		@include flex(center, center);
+	}
+	.review {
+		font-size: 1.3rem;
+		display: -webkit-box;
+		overflow: hidden;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		@include sp {
+			font-size: 1.2rem;
+		}
+	}
+	& &__btn {
+		background-color: white;
+		width: 110px;
+		height: 24px;
+		color: $black;
+		@include flex(center, center);
+		margin: 6px auto 0;
+		transition: all .3s ease;
+		&:hover {
+			opacity: .7;
+		}
+	}
+}
+.act_evaluation {
+	@include flex(center, flex-start);
+	margin-top: 4px;
+	.act_stars {
+		@include flex;
+		width: 84px;
+		margin-right: 10px;
+		.star {
+			width: 14px;
+			height: 14px;
+			&.full {
+				background: url(../images/common/star_full.png);
+				background-size: cover;
+			}
+			&.half {
+				background: url(../images/common/star_half.png);
+				background-size: cover;
+			}
+			&.blank {
+				background: url(../images/common/star_blank.png);
+				background-size: cover;
+			}
+		}
+	}
+	.evaluation_num {
+		@include flex(center, flex-start);
+		.num {
+			color: $black;
+			font-weight: bold;
+		}
+		.total_num {
+			font-size: 1.3rem;
+			margin-left: 4px;
+			a {
+				text-decoration: underline;
+				@include sp {
+					color: $black;
+					font-weight: normal;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+.act_list_price {
+	width: 100%;
+	margin-top: 2px;
+	@include flex(center, flex-start);
+	flex-wrap: wrap;
+	.txt {
+		@include sp {
+			display: block;
+		}
+		.normal_price {
+			position: relative;
+			display: inline-block;
+			padding-right: 16px;
+			margin-right: 4px;
+			font-weight: bold;
+			&::before {
+				width: calc(100% - 16px);
+				height: 2px;
+				background-color: #e05443;
+				content: "";
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 45%;
+				opacity: .8;
+			}
+			&::after {
+				content: "";
+				display: inline-block;
+				width: 12px;
+				height: 8px;
+				background: url(../images/common/arrow_next2.png) no-repeat;
+				background-size: cover;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+		.sale_price {
+			font-size: 2rem;
+			color: $red;
+			font-weight: bold;
+			@include sp {
+				font-size: 1.8rem;
+			}
+		}
+	}
+	.discount_rate {
+		font-size: 1.3rem;
+		display: inline-block;
+		padding: 2px 10px;
+		background-color: white;
+		border: 1px $red solid;
+		border-radius: 4px;
+		color: $red;
+		font-weight: bold;
+		margin-left: 8px;
+		@include sp {
+			margin-left: 3px;
+		}
+	}
+}
+.act_list_checkpoint {
+	margin-top: 16px;
+	@include sp {
+		margin-top: 13px;
+		padding: 0 5%;
+	}
+	.act_list_checkpoint_tit {
+		background-color: $blue;
+		@include eng(1.2rem);
+		color: white;
+		padding: 2px 10px;
+		margin-bottom: 10px;
+	}
+	.list-check_b {
+		li {
+			@include sp {
+				font-size: 1.2rem;
+				line-height: 1.5;
+				&::before {
+					top: 4px;
+				}
+			}
+		}
+	}
+}
+.act_list_tags {
+	width: 100%;
+	@include inline-flex;
+	margin-top: 12px;
+	@include sp {
+		margin-top: 10px;
+		padding: 0 2.4%;
+	}
+	.act_tag {
+		display: inline-block;
+		font-size: 1.3rem;
+		line-height: 1;
+		color: $gray;
+		border: 1px $gray solid;
+		border-radius: 4px;
+		margin-bottom: 4px;
+		padding: 5px 10px;
+		@include sp {
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+		&:not(:last-child) {
+			margin-right: 4px;
+		}
+	}
+}
+.act_type_tags {
+	width: 100%;
+	margin-top: 12px;
+	line-height: 1.5;
+	@include sp {
+		display: none;
+	}
+	i {
+		margin-right: 3px;
+		font-size: 1.5rem;
+	}
+	.act_t_tag {
+		font-size: 1.3rem;
+		color: $gray;
+		font-weight: normal;
+		position: relative;
+		&:hover {
+			color: $black;
+			text-decoration: underline;
+		}
+		@include sp {
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+	}
+	span {
+		font-size: 1.3rem;
+		color: $gray;
+		font-weight: normal;
+		margin: 0 4px;
+		line-height: 1.5;
+	}
+}
+.act_list_item_cal {
+	width: 100%;
+	overflow-x: scroll;
+	padding: 10px 2%;
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	@include over_pc {
+		padding: 15px 0 0;
+	}
+	@include tab {
+		padding: 0;
+		margin-top: 12px;
+	}
+	.cal_flex {
+		@include flex;
+		width: 424px;
+		@include over_pc {
+			width: 100%;
+		}
+	}
+	.cal_item {
+		width: calc(100% / 8 - 4px);
+		height: 68px;
+		display: block;
+		.cal_input_button {
+			@include flex(center, center);
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+			appearance: none;
+			border: 1px #ccc solid;
+			background-color: white;
+			border-radius: 4px;
+			&:disabled {
+				appearance: none;
+				background-color: #eee;
+			}
+			&:not(&:disabled) {
+				box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+			}
+			.dow {
+				font-size: 1.2rem;
+			}
+			.cal_date {
+				font-size: 1.2rem;
+			}
+			.check_more {
+				font-size: 1rem;
+				text-align: center;
+				line-height: 1.5;
+			}
+			.cal_status {
+				width: 24px;
+				height: 24px;
+				@include flex(center, center);
+			}
+		}
+	}
+}
+
+
+/* 2カラムページ内のアクティビティ */
+.page_act_list {
+	width: 100%;
+	margin-top: 40px;
+	&.mt0 {
+		margin-top: 0
+	}
+	@include over_sp {
+		@include inline-flex;
+	}
+	.act_list_item_head {
+		.act_list_item_img {
+			@include over_sp {
+				width: 140px;
+			}
+		}
+		.act_list_item_head_right {
+			@include over_sp {
+				width: calc(100% - 164px);
+			}
+			.act_name {
+				font-size: 1.5rem;
+				@include sp {
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+}

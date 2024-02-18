@@ -1,0 +1,30 @@
+@use "../global" as *;
+
+/* Pagination */
+.pagination {
+	@include flex(center, center);
+	margin-top: 40px;
+	.page-item {
+		margin: 0 1px;
+		.page-link, span {
+			background-color: #FFFFFF;
+			border: 1px solid #DDDDDD;
+			border-radius: 16px;
+			width: 32px;
+			height: 32px;
+			@include flex(center, center);
+			line-height: 1.42857;
+			margin-left: -1px;
+			position: relative;
+			text-decoration: none;
+			font-size: 1.2rem;
+		}
+		&.active {
+			span {
+				background-color: $blue;
+				border-color: $blue;
+				color: white;
+			}
+		}
+	}
+}

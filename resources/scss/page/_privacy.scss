@@ -1,0 +1,33 @@
+@use "../global" as *;
+
+.privacy,
+.terms_body {
+	background-color: #fff;
+	@include over_tab {
+		padding: 0 24px;
+	}
+	ul {
+		margin-top: 10px;
+		li {
+			margin-top: 5px;
+		}
+	}
+	p {
+		margin-top: 24px;
+	}
+	h3 {
+		font-size: 110%;
+		margin-top: 40px;
+		margin-bottom: 8px;
+	}
+	h4 {
+		font-size: 105%;
+		margin-top: 20px;
+	}
+	h5 {
+		margin-top: 15px;
+		+ p {
+			margin-top: 10px;
+		}
+	}
+}

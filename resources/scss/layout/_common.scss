@@ -1,0 +1,164 @@
+@use "../global" as *;
+
+/**************
+Basic Setting
+**************/
+html {
+	font-size: 62.5%;
+	* {
+		box-sizing: border-box;
+		word-wrap: break-word;
+	}
+}
+
+body {
+	font-size: 1.5em;
+	font-family: -apple-system-body, BlinkMacSystemFont, "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1.6;
+	padding: 0;
+	margin: 0;
+	vertical-align: baseline;
+}
+
+select,
+input,
+button,
+textarea {
+	font: 99% sans-serif;
+}
+
+table {
+	font-size: inherit;
+	font: 100%;
+}
+
+pre,
+code,
+kbd,
+samp,
+tt {
+	font-family: monospace;
+	*font-size: 108%;
+	line-height: 100%;
+}
+
+img {
+	max-width: 100%;
+}
+#pagetop {
+	background: url(../images/common/pagetop2.png);
+	background-size: contain;
+	position: fixed;
+	right: 8px;
+	text-indent: -9999px;
+	outline: none;
+	opacity: 0.7;
+	z-index: 3;
+	@include over_tab {
+		width: 60px;
+		height: 60px;
+		bottom: -60px;
+	}
+	@include less_tab {
+		width: 40px;
+		height: 40px;
+		bottom: -50px;
+	}
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-indent: -9999px;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: #1d56c6;
+	outline: none;
+	font-weight: bold;
+	&:hover {
+		color: #5f79ad;
+	}
+}
+.clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+/**************
+Layout Set
+**************/
+.wrap {
+	width: 92%;
+	margin-left: auto;
+	margin-right: auto;
+	@include over_pc {
+		max-width: 1200px;
+	}
+	@include sp {
+		width: 88%;
+	}
+	&.sp100 {
+		@include sp {
+			width: 100%;
+		}
+		.rightColumn {
+			@include sp {
+				width: 88%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}
+.middlewrap {
+	width: 92%;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	@include sp {
+		width: 88%;
+	}
+}
+.shortwrap {
+	width: 92%;
+	max-width: 856px;
+	margin-left: auto;
+	margin-right: auto;
+	@include sp {
+		width: 88%;
+	}
+}
+.page_section {
+	padding: 80px 0;
+	@include less_tab {
+		padding: 30px 0 40px;
+	}
+	&__white {
+		background-color: #fff;
+	}
+	&__gray {
+		background-color: #f3f3f3;
+	}
+	&__blue {
+		background-color: $blue;
+	}
+	&__bgBlue {
+		background-color: $bgBlue;
+	}
+	&__blueg {
+		background-color: $blueGreen;
+	}
+}
+.page_section_top {
+	padding: 0 0 80px;
+	@include less_tab {
+		padding: 24px 0 40px;
+		border-top: 1px #ddd solid;
+	}
+}

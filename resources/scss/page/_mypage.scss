@@ -1,0 +1,161 @@
+@use "../global" as *;
+@use "../component/button";
+
+/**************
+ログイン
+**************/
+.login_section {
+	min-height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	.header_logo {
+		width: 200px;
+		top: auto;
+		margin: 0 auto 24px;
+		@include over_pc {
+			width: 240px;
+			margin-bottom: 40px;
+		}
+	}
+	.login-box {
+		width: 80%;
+		max-width: 400px;
+	}
+	.user-login-input {
+		width: 100%;
+		&-id {
+			width: 100%;
+		}
+		&-pass {
+			width: 100%;
+			margin-top: 8px;
+		}
+	}
+	.user-login-checkbox {
+		margin-top: 16px;
+	}
+	.login-under {
+		margin-top: 16px;
+		text-align: center;
+		.user-login-link {
+			margin-top: 16px
+		}
+	}
+	.btn-login {
+		@extend .btn-blue;
+		width: 100%;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.register-btn {
+		border-radius: 3px;
+		background-color: $skyBlue;
+		color: #fff;
+		width: 80%;
+		padding: 0 16px;
+		max-width: 400px;
+		height: 56px;
+		@include flex(center, center);
+		margin-top: 40px;
+		position: relative;
+		img {
+			display: block;
+			width: 8px;
+			position: absolute;
+			right: 10px;
+		}
+	}
+	.useful_link {
+		width: 100%;
+		@include flex(center, center);
+		margin-top: 8vh;
+		@include over_sp {
+			margin-bottom: 24px;
+		}
+		li {
+			position: relative;
+			padding: 0 12px;
+			&:first-child {
+				&::before {
+					content: "";
+					display: block;
+					width: 1px;
+					height: 80%;
+					position: absolute;
+					top: 10%;
+					left: 0;
+					background-color: $blue;
+				}
+			}
+			&::after {
+				content: "";
+				display: block;
+				width: 1px;
+				height: 80%;
+				position: absolute;
+				top: 10%;
+				right: 0;
+				background-color: $blue;
+			}
+		}
+	}
+}
+
+
+/**************
+マイページ
+**************/
+.mypage_wrap {
+	@include over_sp {
+		width: 96%;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	@include sp {
+		width: 100%;
+	}
+}
+.mypage_navi {
+	@include flex(center, center);
+	width: 100%;
+	margin-bottom: 24px;
+	@include sp {
+		margin-bottom: 0;
+	}
+	.mypage_navi_item {
+		@include flex(center, center);
+		padding: 6px 12px;
+		color: #666;
+		background-color: white;
+		border: 1px #ddd solid;
+		border-radius: 4px;
+		margin: 0 2px;
+		background-color: $gray;
+		color: white;
+		&.selected {
+			background-color: white;
+			color: $blue;
+			@include sp {
+				border-top: 2px $blue solid;
+			}
+		}
+		@include sp {
+			font-size: 1.1rem;
+			padding: 0 10px;
+			height: 40px;
+			border-radius: 0;
+			border-bottom: 0;
+		}
+	}
+}
+.mypage_content {
+	background-color: white;
+	padding: 20px;
+	@include sp {
+		width: 92%;
+		margin: 0 auto;
+	}
+}

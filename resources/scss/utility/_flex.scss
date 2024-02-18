@@ -1,0 +1,60 @@
+@use "../global" as *;
+
+.flex_content {
+	width: 100%;
+	@include over_tab {
+		@include flex;
+		flex-wrap: wrap;
+		&.start {
+			align-items: flex-start;
+		}
+	}
+	&_r {
+		@include over_tab {
+			flex-direction: row-reverse;
+		}
+	}
+	> .item {
+		@include less_tab {
+			width: 100%;
+			&:not(:last-child) {
+				margin-bottom: 24px;
+			}
+		}
+	}
+	.item_1 {
+		@include over_tab {
+			width: 12%;
+		}
+	}
+	.item_2 {
+		@include over_tab {
+			width: 21%;
+		}
+	}
+	.item_3 {
+		@include over_tab {
+			width: 33%;
+		}
+	}
+	.item_4 {
+		@include over_tab {
+			width: 47.5%;
+		}
+	}
+	.item_5 {
+		@include over_tab {
+			width: 62%;
+		}
+	}
+	.item_6 {
+		@include over_tab {
+			width: 73%;
+		}
+	}
+	.item_7 {
+		@include over_tab {
+			width: 84%;
+		}
+	}
+}

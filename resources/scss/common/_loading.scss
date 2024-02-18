@@ -1,0 +1,129 @@
+@use "../global" as *;
+
+/**************
+ローディング画面
+**************/
+.loading {
+	width: 100vw;
+	height: 100vh;
+	transition: all 1s;
+	background-color: #FFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	opacity: 1;
+	visibility: visible;
+	&.is-active {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.loading-animation {
+	width: 100vw;
+	height: 100vh;
+	transition: all 1s;
+	background-color: $bgBlue;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	position: relative;
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.kani01 {
+	display: block;
+	width: 100px;
+	animation: loading01 .5s ease;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.kani02 {
+	display: block;
+	width: 100px;
+	animation: loading01 .5s ease .5s;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.kani03 {
+	display: block;
+	width: 100px;
+	animation: loading02 .5s ease 1s forwards;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.logo_text {
+	display: block;
+	width: 160px;
+	animation: loading03 .5s ease 1.5s forwards;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 120px;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+@keyframes loading01 {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes loading02 {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	40% {
+		transform: translateY(-20px);
+	}
+	60% {
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes loading03 {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

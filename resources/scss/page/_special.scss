@@ -1,0 +1,138 @@
+@use "../global" as *;
+
+/**************
+特集一覧ページ
+**************/
+.special_page_wrap {
+	width: 100%;
+	@include over_tab {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-direction: row;
+	}
+	.leftColumn {
+		@include over_pc {
+			width: calc(100% - 320px);
+		}
+		@include spc {
+			width: 72%;
+		}
+		@include less_tab {
+			margin-top: 0;
+		}
+	}
+	.rightColumn {
+		@include over_pc {
+			width: 240px;
+		}
+		@include spc {
+			width: 22%;
+		}
+		@include less_tab {
+			width: 100%;
+			margin-top: 40px;
+		}
+	}
+	.thumbnail {
+		@include flex(center, center);
+		background-color: white;
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+.special_page_list {
+	.special_list_item {
+		width: 100%;
+		padding: 24px 0;
+		border-bottom: 1px #ddd solid;
+		&:first-child {
+			border-top: 1px #ddd solid;
+		}
+		@include over_sp {
+			@include flex(flex-start, space-between);
+		}
+		.thumb {
+			width: 300px;
+			overflow: hidden;
+			@include tab {
+				width: 240px;
+			}
+			@include sp {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			img {
+				display: block;
+				height: auto;
+				transition: all .3s ease-out;
+			}
+			&:hover, &:active {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+		.special_list_item_textArea {
+			@include over_tab {
+				width: calc(100% - 340px);
+			}
+			@include tab {
+				width: calc(100% - 264px);
+			}
+			.tit {
+				a {
+					color: $black;
+					font-size: 1.6rem;
+				}
+			}
+			.post_date {
+				font-size: 1.2rem;
+				color: $grayText;
+			}
+			.excerpt {
+				margin-top: 12px;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				font-size: 1.3rem;
+			}
+		}
+	}
+}
+.special_title {
+	font-size: 2.4rem;
+	line-height: 1.5;
+	margin-bottom: 24px;
+	@include sp {
+		font-size: 1.72rem;
+		margin-bottom: 20px;
+	}
+}
+
+.special_article_bottom {
+	width: 100%;
+	@include flex;
+	margin-top: 48px;
+	padding-top: 16px;
+	border-top: 1px #ddd solid;
+}
+.article_back {
+	display: inline-block;
+	padding-left: 20px;
+	background: url(../images/common/arrow_prev2.png) no-repeat center left;
+	background-size: 9.25px 7.5px;
+	color: $pink;
+	@include sp {
+		font-size: 1.2rem;
+		padding: 1px 0 0 15px;
+	}
+}
+.special_recommend {
+	margin-top: 64px;
+}

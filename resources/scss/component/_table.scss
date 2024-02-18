@@ -1,0 +1,93 @@
+@use "../global" as *;
+
+/* Tables */
+.table-s1 {
+	width: 100%;
+	th {
+		padding: 12px 10px;
+		text-align: left;
+		@include over_tab {
+			border-bottom: 1px $red solid;
+			width: 200px;
+		}
+		@include less_tab {
+			width: 100%;
+			display: block;
+			background-color: #f3f3f3;
+			padding: 8px;
+		}
+	}
+	td {
+		background-color: #fff;
+		padding: 12px 24px;
+		@include over_tab {
+			border-bottom: 1px #ddd solid;
+		}
+		@include less_tab {
+			width: 100%;
+			display: block;
+			padding: 10px 0;
+		}
+	}
+}
+.table-s2 {
+	width: 100%;
+	@include less_tab {
+		font-size: 1.3rem;
+	}
+	th {
+		width: 120px;
+		padding: 5px 0;
+		border: 1px #ddd solid;
+		text-align: center;
+		background-color: #f3f3f3;
+		@include over_pc {
+			text-align: left;
+			padding: 8px 16px;
+		}
+		@include less_pc {
+			padding: 3px;
+			width: 80px;
+		}
+	}
+	td {
+		border: 1px #ddd solid;
+		@include over_pc {
+			text-align: left;
+			padding: 8px 16px;
+		}
+		@include less_pc {
+			padding: 3px 5px;
+		}
+	}
+}
+.normal-table {
+	width: 100%;
+	tr {
+		border-bottom: 3px white solid;
+	}
+	th {
+		font-size: 1.4rem;
+		font-weight: normal;
+		padding: 20px;
+		background-color: #f1f1f1;
+		width: 200px;
+		text-align: left;
+		border-right: 3px white solid;
+		@include sp {
+			display: block;
+			width: 100%;
+			padding: 10px;
+		}
+	}
+	td {
+		background-color: #fbfbfb;
+		padding: 10px 0px 20px 20px;
+		@include sp {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			font-size: 1.3rem;
+		}
+	}
+}

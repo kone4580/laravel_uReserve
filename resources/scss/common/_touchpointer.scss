@@ -1,0 +1,78 @@
+@use "../global" as *;
+
+/**************
+TouchPointer
+**************/
+.touch_pointer {
+	width: 32px;
+	height: 32px;
+	background-color: transparent;
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	z-index: 9999;
+	&::before {
+		content: "";
+		display: block;
+		width: 32px;
+		height: 32px;
+		background-color: $blue;
+		opacity: 0;
+		border-radius: 32px;
+		position: absolute;
+		top: calc(50% - 16px);
+		left: calc(50% - 16px);
+		transition: opacity 0.25s ease;
+	}
+	&::after {
+		content: "";
+		display: block;
+		width: 32px;
+		height: 32px;
+		border: 2px solid $blue;
+		opacity: 0;
+		border-radius: 32px;
+		position: absolute;
+		top: calc(50% - 16px);
+		left: calc(50% - 16px);
+		box-sizing: border-box;
+		transition: opacity 0.25s ease;
+	}
+	&.on {
+		&::before {
+			animation-name: touch_pointer_anim;
+			animation-duration: 0.45s;
+			animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+		}
+		&::after {
+			animation-name: touch_pointer_anim_bd;
+			animation-duration: 0.45s;
+			animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+			animation-delay: 0.05s;
+		}
+	}
+}
+@keyframes touch_pointer_anim {
+	0% {
+		transform: scale(0);
+		opacity: 0.3;
+	}
+	40% {
+		opacity: 0.3;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0;
+	}
+}
+@keyframes touch_pointer_anim_bd {
+	0% {
+		transform: scale(0);
+		opacity: 0.8;
+	}
+	100% {
+		transform: scale(1.5);
+		opacity: 0;
+	}
+}

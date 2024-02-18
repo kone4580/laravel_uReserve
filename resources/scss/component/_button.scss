@@ -1,0 +1,310 @@
+@use "../global" as *;
+
+/* Buttons */
+.red_arrow_btn {
+	@include flex(center, flex-start);
+	color: $black;
+	border-bottom: 1px #ddd solid;
+	padding: 10px 0;
+	width: 300px;
+	position: relative;
+	&::after {
+		display: block;
+		content: "";
+		width: 100%;
+		max-width: 0%;
+		background-color: $black;
+		height: 1px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transition: all 0.3s $easeInOutSine;
+	}
+	span {
+		width: 28px;
+		height: 28px;
+		@include flex(center, center);
+		background-color: $red;
+		margin-right: 16px;
+		i {
+			color: white;
+		}
+	}
+	&:hover {
+		color: $black;
+		&::after {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+}
+.btn-white-black {
+	font-size: 1.6rem;
+	padding: 0 25px;
+	background-color: #fff;
+	position: relative;
+	text-align: center;
+	border-radius: 40px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	@include flex(center, center);
+	color: $black;
+	border: 2px $black solid;
+	line-height: 1.5;
+	@include over_tab {
+		font-size: 1.6rem;
+		width: 400px;
+		height: 56px;
+		max-width: 100%;
+	}
+	@include less_tab {
+		padding: 10px 30px;
+		height: 48px;
+		font-size: 1.3rem;
+	}
+	&:hover {
+		background-color: #eee;
+		color: $black;
+	}
+	i {
+		position: absolute;
+		right: 16px;
+		top: 50%;
+		margin-top: -8px;
+		@include less_tab {
+			margin-top: -7px;
+		}
+	}
+	&.mauto {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&.eng {
+		@include eng(1.6rem, 400);
+	}
+}
+.btn-white-small {
+	font-size: 1.3rem;
+	padding: 5px 16px;
+	background-color: #fff;
+	position: relative;
+	text-align: center;
+	border-radius: 40px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	display: inline-block;
+	color: $black;
+	border: 2px $black solid;
+	line-height: 1.5;
+	font-weight: normal;
+	@include sp {
+		font-size: 1.1rem;
+	}
+	&:hover {
+		background-color: #eee;
+		color: $black;
+	}
+	i {
+		position: absolute;
+		right: 16px;
+		top: 50%;
+		margin-top: -8px;
+		@include less_tab {
+			margin-top: -7px;
+		}
+	}
+	&.mauto {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&.eng {
+		@include eng(1.6rem, 400);
+	}
+}
+.btn-blue {
+	font-size: 1.6rem;
+	padding: 0 25px;
+	background-color: $blue;
+	position: relative;
+	text-align: center;
+	border-radius: 5px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	@include flex(center, center);
+	color: white;
+	line-height: 1.5;
+	border: 2px $blue solid;
+	@include over_tab {
+		font-size: 1.6rem;
+		width: 480px;
+		height: 64px;
+		max-width: 100%;
+	}
+	@include less_tab {
+		padding: 10px 30px;
+		height: 56px;
+	}
+	@include sp {
+		width: 280px;
+		font-size: 1.4rem;
+	}
+	&:hover, &:active {
+		background-color: white;
+		border: 2px $blue solid;
+		color: $blue;
+	}
+	i {
+		position: absolute;
+		right: 16px;
+		top: 50%;
+		margin-top: -8px;
+		@include less_tab {
+			margin-top: -7px;
+		}
+		@include sp {
+			right: 8px;
+		}
+	}
+	&.mauto {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&.eng {
+		@include eng(1.6rem, 400);
+	}
+}
+.btn-red {
+	background-color: $red;
+    text-align: center;
+    color: #fff;
+    appearance: none;
+    border: 0;
+    height: auto;
+    line-height: inherit;
+    border-radius: 5px;
+	transition: all .3s ease-in-out;
+	@include flex(center, center);
+	cursor: pointer;
+	border: 0;
+	padding: 0 12px;
+	@include over_tab {
+		width: 480px;
+		height: 56px;
+		max-width: 100%;
+	}
+	@include less_tab {
+		padding: 10px 30px;
+		height: 40px;
+	}
+	@include sp {
+		width: 280px;
+		font-size: 1.4rem;
+	}
+	&:hover, &:active {
+		background-color: tomato;
+		color: white;
+	}
+	i {
+		position: absolute;
+		right: 16px;
+		top: 50%;
+		margin-top: -8px;
+		@include less_tab {
+			margin-top: -7px;
+		}
+		@include sp {
+			right: 8px;
+		}
+	}
+	&.mauto {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&.eng {
+		@include eng(1.6rem, 400);
+	}
+}
+.btn-default {
+	color: $black;
+	background-color: #eee;
+	transition: all .3s ease-in-out;
+	cursor: pointer;
+	border: 0;
+	appearance: none;
+	padding: 4px 12px 7px;
+	border-radius: 4px;
+	font-weight: bold;
+	font-size: 1.3rem;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	&::after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #b2b2b2;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		transition: all .3s ease-in-out;
+	}
+	&:hover {
+		color: $black;
+		background: #ddd;
+		padding: 6px 12px 5px;
+		&::after {
+			height: 1px;
+		}
+	}
+}
+.btn-white-red, .btn-favorite {
+	font-size: 1.6rem;
+	padding: 0 25px;
+	background-color: #fff;
+	position: relative;
+	text-align: center;
+	border-radius: 40px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	@include flex(center, center);
+	border: 2px $red solid;
+	line-height: 1.5;
+	cursor: pointer;
+	@include over_tab {
+		font-size: 1.6rem;
+		width: 400px;
+		height: 56px;
+		width: 100%;
+	}
+	@include less_tab {
+		padding: 10px 30px;
+		height: 48px;
+		font-size: 1.3rem;
+	}
+	&.mauto {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.favorite_add {
+		font-weight: bold;
+		color: gray;
+	}
+	.favorite_added {
+		display: none;
+		color: red;
+		font-weight: bold;
+	}
+	&:hover {
+		background-color: #ffeae8;
+	}
+	&.added {
+		background-color: #ffeae8;
+		.favorite_add {
+			display: none;
+		}
+		.favorite_added {
+			display: block;
+		}
+	}
+}

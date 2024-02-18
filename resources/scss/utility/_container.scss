@@ -1,0 +1,107 @@
+@use "../global" as *;
+
+.c_container {
+	width: 100%;
+	@include over_tab {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	@include tab {
+		padding: 0 4%;
+	}
+}
+.news_container {
+	width: 100%;
+	@include over_tab {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-direction: row-reverse;
+	}
+	.leftColumn {
+		@include over_pc {
+			width: calc(100% - 320px);
+		}
+		@include spc {
+			width: 72%;
+		}
+		@include less_tab {
+			margin-top: 0px;
+		}
+	}
+	.rightColumn {
+		@include over_pc {
+			width: 250px;
+		}
+		@include spc {
+			width: 22%;
+		}
+		@include less_tab {
+			margin-top: 40px;
+		}
+	}
+}
+.activity_list_wrap {
+	width: 100%;
+	@include over_tab {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-direction: row-reverse;
+	}
+}
+.leftColumn {
+	@include over_pc {
+		width: 240px;
+	}
+	@include spc {
+		width: 22%;
+	}
+	@include less_tab {
+		width: 100%;
+		margin-top: 40px;
+	}
+}
+.rightColumn {
+	@include over_pc {
+		width: calc(100% - 320px);
+	}
+	@include spc {
+		width: 72%;
+	}
+}
+.divider-full {
+	margin: 35px 0;
+	display: block;
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px #aaa dotted;
+	@include less_tab {
+		margin: 20px 0;
+	}
+}
+.sticky_content {
+	width: 100%;
+	display: flex;
+	@include over_tab {
+		flex-direction: row-reverse;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	@include less_tab {
+		flex-direction: column-reverse;
+	}
+}
+#pageContent {
+	section {
+		&:not(:last-child) {
+			margin-bottom: 80px;
+			@include less_tab {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}

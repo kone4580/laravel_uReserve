@@ -1,0 +1,95 @@
+@use "../global" as *;
+
+/* icons */
+.icon_circle {
+	width: 13px;
+	height: 13px;
+	background: url(../images/common/icon_circle.png) no-repeat;
+	background-size: cover;
+	display: inline-block;
+	margin-right: 5px;
+}
+.icon-heart-o {
+	width: 22px;
+	height: 18px;
+	position: relative;
+	display: inline-block;
+	&::after {
+		display: block;
+		transform: scale(0.35);
+		content: url(../images/common/icon-heart-o.png);
+		position: absolute;
+		left: -24px;
+		top: -18px;
+	}
+}
+.icon-heart {
+	width: 22px;
+	height: 18px;
+	position: relative;
+	display: inline-block;
+	&::after {
+		display: block;
+		transform: scale(0.35);
+		content: url(../images/common/icon-heart.png);
+		position: absolute;
+		left: -24px;
+		top: -18px;
+	}
+}
+.icon_avalable {
+	display: block;
+	width: 16px;
+	height: 16px;
+	background: url(../images/common/icon_available.png) no-repeat center;
+	background-size: cover;
+}
+.icon_unavalable {
+	display: block;
+	width: 16px;
+	height: 4px;
+	background: url(../images/common/icon_unavailable.png) no-repeat center;
+	background-size: cover;
+}
+.icon_little {
+	display: block;
+	width: 15px;
+	height: 15px;
+	background: url(../images/common/icon_little.png) no-repeat center;
+	background-size: cover;
+}
+.icon_angle_right {
+	display: block;
+	width: 8px;
+	height: 12px;
+	background: url(../images/common/angle_right_black.png) no-repeat center;
+	background-size: cover;
+}
+.icon_angle_right_white {
+	display: block;
+	width: 8px;
+	height: 12px;
+	background: url(../images/common/angle_right_white.png) no-repeat center;
+	background-size: cover;
+}
+.icon_arrow_right {
+    display: inline-block;
+    width: 12px;
+    height: 8px;
+    background: url(../images/common/arrow_next2.png) no-repeat;
+    background-size: cover;
+}
+.icon_kame {
+	display: inline-block;
+    width: 40px;
+    height: 32px;
+    background: url(../images/common/icon_kame.png) no-repeat;
+    background-size: cover;
+}
+.icon_share {
+	display: inline-block;
+    width: 19px;
+    height: 18px;
+    background: url(../images/common/icon_share.png) no-repeat;
+    background-size: cover;
+}

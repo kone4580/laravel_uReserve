@@ -1,0 +1,81 @@
+@use "../global" as *;
+
+.text1 {
+	color: #da4553;
+	font-weight: bold;
+}
+
+.text2 {
+	font-weight: bold;
+	color: #0049ab;
+	font-size: 1.8rem;
+	letter-spacing: 0.05em;
+	line-height: 1.55;
+}
+
+.text3 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #DC009E;
+}
+
+.text4 {
+	font-size: 15px;
+	color: #004879;
+}
+
+.font-s {
+	color: #777;
+	font-size: 80%;
+}
+.font-l {
+	font-size: 136%;
+}
+.strong_text {
+	@include over_pc {
+		font-size: 1.8rem;
+		text-align: center;
+	}
+}
+.page_top_text {
+	text-align: center;
+	font-size: 160%;
+	font-weight: bold;
+	line-height: 1.6;
+	@include sp {
+		font-size: 2rem;
+		text-align: left;
+		br {
+			display: none;
+		}
+	}
+}
+.page_top_next {
+	text-align: center;
+	margin-top: 25px;
+	padding-top: 25px;
+	position: relative;
+	@include sp {
+		text-align: left;
+		br {
+			display: none;
+		}
+	}
+	&::before {
+		width: 1px;
+		height: 24px;
+		content: "";
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: -16px;
+		background-color: $black;
+	}
+}
+.white_text {
+	color: white;
+}
+.blue_text {
+	color: $blue;
+	font-weight: bold;
+}

@@ -1,0 +1,89 @@
+@use "../global" as *;
+
+.sq1 {
+	padding-left: 15px;
+	position: relative;
+	font-weight: bold;
+	line-height: 1.5;
+	&::before {
+		width: 10px;
+		height: 10px;
+		background-color: $yellow;
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 7px;
+	}
+}
+.sq_white {
+	padding-left: 15px;
+	position: relative;
+	font-weight: bold;
+	line-height: 1.5;
+	color: white;
+	&::before {
+		width: 10px;
+		height: 10px;
+		background-color: white;
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 7px;
+	}
+}
+.whiteBox {
+	background-color: white;
+	padding: 32px 40px;
+	border-radius: 8px;
+	@include sp {
+		padding: 20px;
+	}
+	&.article_box {
+		padding-top: 10px;
+	}
+}
+.borderBox {
+	background-color: #fff;
+	border: #ccc solid 1px;
+	padding: 24px 32px;
+	border-radius: 4px;
+	@include less_tab {
+		padding: 16px;
+	}
+}
+.anchor {
+	padding-top: 100px;
+	margin-top: -100px;
+	@include less_tab {
+		padding-top: 80px;
+		margin-top: -80px;
+	}
+}
+.sp-scroll {
+	width: 100%;
+	overflow-x: auto;
+}
+.underconst {
+	background-color: #fff;
+	text-align: center;
+	margin: 50px auto;
+	padding: 80px 0;
+	border: 1px #ddd solid;
+	border-radius: 5px;
+}
+.sp_none {
+	@include sp {
+		display: none;
+	}
+}
+.float_link {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}

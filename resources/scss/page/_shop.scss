@@ -1,0 +1,183 @@
+@use "../global" as *;
+
+/**************
+ショップ一覧ページ
+**************/
+.page_shop_list {
+	width: 100%;
+	@include flex(flex-start, space-between);
+	flex-wrap: wrap;
+	@include tab {
+		padding: 0 16px 10px;
+	}
+	.shop_item {
+		width: 31%;
+		position: relative;
+		margin-bottom: 20px;
+		@include sp {
+			width: 48%;
+			&:nth-child(odd) {
+				margin: 0 4% 20px 0;
+			}
+			&:nth-child(even) {
+				margin: 0 0 20px 0;
+			}
+		}
+		.img {
+			width: 100%;
+			aspect-ratio: 3 / 2;
+			position: relative;
+			overflow: hidden;
+			img {
+				transition: all .3s ease;
+				@include centerItem;
+			}
+		}
+		.tit {
+			font-size: 1.4rem;
+			font-weight: bold;
+			margin-top: 8px;
+			color: $black;
+			@include sp {
+				font-size: 1.3rem;
+			}
+		}
+		.excerpt {
+			display: -webkit-box;
+			overflow: hidden;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			line-height: 1.5;
+			font-size: 1.3rem;
+			color: $gray;
+			margin-top: 5px;
+			@include sp {
+				font-size: 1.2rem;
+			}
+		}
+		&:hover, &:active {
+			.img {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}
+
+/**************
+ショップ詳細ページ
+**************/
+.shop_single_head {
+	width: 100%;
+	@include over_sp {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 64px;
+	}
+	@include sp {
+		margin-bottom: 32px;
+	}
+	.thumb {
+		width: calc(100% - 520px);
+		aspect-ratio: 16 / 9;
+		background-color: white;
+		text-align: center;
+		position: relative;
+		max-height: 100%;
+		@include flex(center, center);
+		overflow: hidden;
+		border-radius: 8px;
+		@include tab {
+			width: 57%;
+		}
+		@include sp {
+			width: 100%;
+		}
+		img {
+			display: block;
+		}
+	}
+	.shop_single_head_side {
+		width: 480px;
+		background-color: white;
+		border-radius: 8px;
+		padding: 32px 40px;
+		@include tab {
+			width: 40%;
+		}
+		@include sp {
+			width: 100%;
+			padding: 20px;
+			margin-top: 10px;
+		}
+		.shop_name {
+			font-size: 2rem;
+			margin-bottom: 16px;
+			@include sp {
+				font-size: 1.6rem;
+			}
+		}
+		.activity_cat_tags {
+			width: 100%;
+			@include inline-flex;
+			margin-top: 5px;
+			span {
+				background-color: white;
+				border: 1px #ccc solid;
+				font-size: 1.2rem;
+				padding: 2px 13px;
+				margin: 3px 3px 0 0;
+				@include sp {
+					font-size: 1.1rem;
+				}
+			}
+		}
+	}
+}
+.shop_page_wrap {
+	width: 100%;
+	@include over_tab {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-direction: row;
+	}
+	.leftColumn {
+		@include over_pc {
+			width: calc(100% - 320px);
+		}
+		@include spc {
+			width: 72%;
+		}
+		@include less_tab {
+			margin-top: 0;
+		}
+	}
+	.rightColumn {
+		@include over_pc {
+			width: 272px;
+		}
+		@include spc {
+			width: 22%;
+		}
+		@include less_tab {
+			width: 100%;
+			margin-top: 40px;
+		}
+	}
+}
+.shop-baseinfo {
+	dl {
+		dt {
+			color: $gray;
+			font-size: 1.3rem;
+			font-weight: bold;
+			margin-bottom: 3px;
+		}
+		dd {
+			padding-bottom: 12px;
+		}
+	}
+}

@@ -1,0 +1,81 @@
+@use "../global" as *;
+
+/**************
+スポット一覧ページ
+**************/
+.spot_page_list {
+	.spot_list_item {
+		width: 100%;
+		padding: 24px 0;
+		border-bottom: 1px #ddd solid;
+		&:first-child {
+			border-top: 1px #ddd solid;
+		}
+		@include over_sp {
+			@include flex(flex-start, space-between);
+		}
+		.thumb {
+			width: 300px;
+			aspect-ratio: 4 / 3;
+			overflow: hidden;
+			position: relative;
+			@include tab {
+				width: 240px;
+			}
+			@include sp {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			img {
+				@include centerItem;
+				transition: all .3s ease-out;
+			}
+			a {
+				&:hover, &:active {
+					img {
+						transform: scale(1.1);
+					}
+				}
+			}
+		}
+		.spot_list_item_textArea {
+			@include over_tab {
+				width: calc(100% - 340px);
+			}
+			@include tab {
+				width: calc(100% - 264px);
+			}
+			.tit {
+				a {
+					color: $black;
+					transition: all .3s ease-out;
+					@include over_sp {
+						font-size: 1.8rem;
+					}
+					font-size: 1.6rem;
+					&:hover, &:active {
+						color: $waterBlue;
+					}
+				}
+			}
+			.post_date {
+				font-size: 1.2rem;
+				color: $grayText;
+			}
+			.excerpt {
+				margin-top: 12px;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				font-size: 1.3rem;
+				@include over_sp {
+					-webkit-line-clamp: 10;
+				}
+				@include sp {
+					-webkit-line-clamp: 3;
+				}
+			}
+		}
+	}
+}

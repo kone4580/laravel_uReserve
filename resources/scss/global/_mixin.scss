@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+$widthWide: 1440px;
+$widthWides: 1439.9px;
+$widthPC: 1160px;
+$widthPCs: 1159.9px;
+$widthTab: 821px;
+$widthTabs: 820.9px;
+$widthSP: 560px;
+$widthSPs: 559.9px;
+
+@mixin wide {
+	@media (min-width: ($widthWide)) {
+		@content;
+	}
+}
+@mixin pc {
+	@media (min-width: ($widthPC)) and (max-width: ($widthWides)) {
+		@content;
+	}
+}
+@mixin spc {
+	@media (min-width: ($widthTab)) and (max-width: ($widthPCs)) {
+		@content;
+	}
+}
+@mixin tab {
+	@media (min-width: ($widthSP)) and (max-width: ($widthTabs)) {
+		@content;
+	}
+}
+@mixin sp {
+	@media (max-width: ($widthSPs)) {
+		@content;
+	}
+}
+@mixin less_tab {
+	@media (max-width: ($widthSPs)) {
+		@content;
+	}
+}
+@mixin over_pc {
+	@media (min-width: ($widthPC)) {
+		@content;
+	}
+}
+@mixin less_pc {
+	@media (max-width: ($widthPCs)) {
+		@content;
+	}
+}
+@mixin over_tab {
+	@media (min-width: ($widthTab)) {
+		@content;
+	}
+}
+@mixin less_tab {
+	@media (max-width: ($widthTabs)) {
+		@content;
+	}
+}
+@mixin over_sp {
+	@media (min-width: ($widthSP)) {
+		@content;
+	}
+}
+@mixin flex($alignItems: center, $justifyContent: space-between) {
+	display: flex;
+	align-items: $alignItems;
+	justify-content: $justifyContent;
+}
+@mixin inline-flex {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+@mixin transition {
+	-moz-transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+@mixin centerItem {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+@mixin mincho($fontSize, $fontWeight: normal) {
+	font-family: 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN", HGS明朝E, メイリオ, Meiryo, serif;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+}
+@mixin eng($fontSize, $fontWeight: 400) {
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	line-height: 1.5;
+}
